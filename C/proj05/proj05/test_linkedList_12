@@ -1,7 +1,0 @@
-insert abc 1
-insert def 2
-insert ghi 3
-print
-delete WRONG
-print
-

@@ -1,6 +1,0 @@
-print
-insert tooLongName234567890 100
-print
-insert shouldBeOKAfter -17
-print
-

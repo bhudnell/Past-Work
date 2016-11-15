@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+/*
+ * 12 JavaScript functions requiring functions, alert, selection, repetition, and arrays.
+ * The code is quasi-tested with alerts given at the end of this one file.
+ * Feel free to write more alerts. We will have different ones.
+ * 
+ * Programmer: Brendon Hudnell 
+ */
+
+// 0) doubleUp
+// Given a string argument, return the string where all characters are duplicated
+//
+function doubleUp(str) {
+	var result = '';
+	for (var i=0; i<str.length; i++)
+		result += str[i] + str[i];
+	return result;
+}
+
+document.write("doubleUp('') should be ''? " + doubleUp('')  + "<br>");
+document.write("doubleUp('a') should be 'aa'? " + doubleUp('a')  + "<br>");
+document.write("doubleUp('23') should be '2233'? " + doubleUp('23')  + "<br>");
+document.write("doubleUp('abc') should be 'aabbcc'? " + doubleUp('abc')  + "<br><br>");
+ 
+// 1) populationPrediction
+// According to http://www.census.gov/popclock/, at the time of this writing, the population growth 
+// in the United States can be predicted as follows:
+//
+//	 One birth every 8 seconds
+//   One death every 13 seconds
+//   One international migrant (net) every 40 seconds
+//
+// Write a function that predicts the population for any number of days into the future 
+// when also given the current population. For example one year population growth should
+// be epxressed like this: populationPrediction(320000000, 365) should return 322304554.
+//
+function populationPrediction(currentPop, days) {
+	//birth per day: 86400/8
+	//death per day: 86400/13 
+	//migrant per day: 86400/40
+	return currentPop + Math.round(days*(86400/8 - 86400/13 + 86400/40));
+}
+
+document.write("populationPrediction(320000000, 365) should be 322304554? " + populationPrediction(320000000, 365)  + "<br>");
+document.write("populationPrediction(320000000, 1) should be 320006314? " + populationPrediction(320000000, 1)  + "<br>");
+document.write("populationPrediction(320000000, 0) should be 320000000? " + populationPrediction(320000000, 0)  + "<br>");
+document.write("populationPrediction(0, 365) should be 2304554? " + populationPrediction(0, 365)  + "<br><br>");
+  
+// 2) max
+//
+// Given three arguments, return the one that is greater than or equal to the other two
+function max(a, b, c) {
+	if (a > b){
+		if (a > c)
+			return a;
+		return c;			
+	}
+	else if (c > b){
+		if (c > a)
+			return c;
+		return a;
+	}
+	return b;
+}
+
+document.write("max(5.2, 5.0, 5) should return 5.2? " + max (5.2, 5.0, 5) + "<br>");
+document.write("max(1, 2, 3) should return 3? " + max (1, 2, 3) + "<br>");
+document.write("max(1, 3, 2) should return 3? " + max (1, 2, 3) + "<br>");
+document.write("max(2, 1, 3) should return 3? " + max (1, 2, 3) + "<br>");
+document.write("max(2, 3, 1) should return 3? " + max (1, 2, 3) + "<br>");
+document.write("max(3, 2, 1) should return 3? " + max (1, 2, 3) + "<br>");
+document.write("max(3, 1, 2) should return 3? " + max (1, 2, 3) + "<br>");
+document.write("max('charlie', 'baker', 'able') should return charlie? " + max ( 'charlie', 'baker', 'able' ) + "<br><br>");
+
+// 3)  int daysInMonth(int month, int year)
+// Complete the free function daysInMonth that returns the number of days in a month 
+// for the given year. There are 30 days in the months September, April, June, and November,
+// or months 9, 4, 6, and 11.  February has 28 days unless it is a leap year when it has 29. 
+// All other months 1, 3, 5, 7, 8, 10, and 12 (December) have 31 days. Assume the year is
+// always >= 1582. You may use your own existing method isLeapYear. Return -1 if month is not 
+// in the range of 1 through 12.
+//
+//   daysInMonth(1, 2020) returns 31
+//   daysInMonth(2, 2020) returns 29
+//   daysInMonth(2, 2019) returns 28
+//   daysInMonth(0, 2019) returns -1
+//   daysInMonth(14, 2019) returns -1
+// 
+function daysInMonth(month, year) {
+	var thirtyDay = [4, 6, 9, 11];
+	var thirtyOneDay = [1, 3, 5, 7, 8, 10, 12];
+	
+	if (month < 1 || month > 12)
+		return -1;
+	if (thirtyDay.indexOf(month) != -1)
+		return 30;
+	if (thirtyOneDay.indexOf(month) != -1)
+		return 31;
+	if (year%4 == 0)
+		return 29;
+	return 28;
+}
+
+document.write("daysInMonth(1, 2020) should return 31? " + daysInMonth(1, 2020 ) + "<br>");
+document.write("daysInMonth(2, 2020) should return 29? " + daysInMonth(2, 2020 ) + "<br>");
+document.write("daysInMonth(4, 2020) should return 30? " + daysInMonth(4, 2020 ) + "<br>");
+document.write("daysInMonth(2, 2019) should return 28? " + daysInMonth(2, 2019 ) + "<br>");
+document.write("daysInMonth(0, 2020) should return -1? " + daysInMonth(0, 2020 ) + "<br>");
+document.write("daysInMonth(13, 2020) should return -1? " + daysInMonth(13, 2020 ) + "<br><br>");
+
+// 4)  function validDate(string date)
+//
+// Write free function validDate to return true if the string argument is a valid calendar date. 
+// The arguments always take the form of month, day, and year as positive integers separated 
+// by / as in "mm/dd/yyyy". If the string argument does not express a proper date, return false. 
+// You will need the free function std::stoi(string possibleInt) (string to integer) that returns 
+// the integer value of the string argument with the precondition that the string argument is a 
+// valid integer. For example str("08") returns 8 and str("2021") returns 2021.
+//
+// validDate("01/31/2016") returns true 
+// validDate("12/31/2017") returns true 
+// validDate("06/15/2018") returns true 
+// validDate("02/28/2019") returns true 
+// validDate("02/29/2019") returns false 
+// validDate("2019/06/06") returns false 
+function validDate(date) {
+	var arr = date.split("/");
+	var month = parseInt(arr[0]);
+	var day = parseInt(arr[1]);
+	var year = parseInt(arr[2]);
+	
+	if (isNaN(day) || isNaN(month) || isNaN(year) || month < 1 || month > 12)
+		return false;
+	
+	var DiM = daysInMonth(month, year);
+	if (day < 1 || day > DiM)
+		return false;
+	return true;
+}
+
+document.write("validDate('xx/31/2016') should return false? " + validDate('xx/31/2016') + "<br>");
+document.write("validDate('01/xx/2016') should return false? " + validDate('01/xx/2016') + "<br>");
+document.write("validDate('01/31/xxxx') should return false? " + validDate('01/31/xxxx') + "<br>");
+document.write("validDate('01/32/2016') should return false? " + validDate('01/32/2016') + "<br>");
+document.write("validDate('01/00/2016') should return false? " + validDate('01/00/2016') + "<br>");
+document.write("validDate('00/31/2016') should return false? " + validDate('00/31/2016') + "<br>");
+document.write("validDate('13/31/2016') should return false? " + validDate('13/31/2016') + "<br>");
+document.write("validDate('01/31/2016') should return true? " + validDate('01/31/2016') + "<br>");
+document.write("validDate('12/31/2017') should return true? " + validDate('12/31/2017') + "<br>");
+document.write("validDate('06/15/2018') should return true? " + validDate('06/15/2018') + "<br>");
+document.write("validDate('02/28/2019') should return true? " + validDate('02/28/2019') + "<br>");
+document.write("validDate('02/29/2019') should return false? " + validDate('02/29/2019') + "<br>");
+document.write("validDate('2019/06/06') should return false? " + validDate('2019/06/06') + "<br><br>");
+
+// 5) reverseString
+// function reverseString(str) 
+// Return a new string that has arg's characters in reverse order.    
+//   reverseString("") returns ""    
+//   reverseString("1") returns "1"    
+//   reverseString("1234") returns "4321"    
+function reverseString(str)  {
+	var result = "";
+	for (var i=str.length-1; i>-1; i--)
+		result += str[i];
+	return result;
+}
+
+document.write("reverseString('gfedcba') should return abcdefg? " + reverseString('gfedcba') + "<br>");
+document.write("reverseString('') should return ''? " + reverseString('') + "<br>");
+document.write("reverseString('a') should return a? " + reverseString('a') + "<br><br>");
+
+// 6) isPalindrome
+//
+// A palindrome is a collection of characters that reads the same backward as forward.
+// Some examples of palindromes are YASISAY, racecar, 1234321, ABBA, level. 
+// Complete function isPalindrome to return true id the argument is, or false if the 
+// argument is not a palindrome. Note: Do not use any blank characters! 
+function isPalindrome(str) {
+	var arr = str.split(" ");
+	for (var i=0; i<arr.length; i++)
+		arr[i] = arr[i].trim();
+	str = arr.join("");
+	
+	for (var i=0; i<str.length; i++){
+		if (str[i] != str[str.length-1-i])
+			return false;
+	}
+	return true;
+}
+
+document.write("isPalindrome('123 43    21') should return true? " + isPalindrome('123 43    21') + "<br>");
+document.write("isPalindrome('a man a plan a canal panama') should return true? " + isPalindrome('a man a plan a canal panama') + "<br>");
+document.write("isPalindrome('a') should return true? " + isPalindrome('a') + "<br>");
+document.write("isPalindrome('') should return true? " + isPalindrome('') + "<br>");
+document.write("isPalindrome('madamimadam') should return true? " + isPalindrome('madamimadam') + "<br>");
+document.write("isPalindrome('madamimadama') should return false? " + isPalindrome('madamimadama') + "<br><br>");
+
+// 7) evensLeft
+// Modify the parameter nums so it still contains the exact same numbers as the given vector, 
+// but rearranged so that all the even numbers come before all the odd numbers. Other than that,
+// the numbers can be in any order. You must modify the vector argument by changing nums in 
+// function evensLeft. The array may be empty or have only one element. In both cases, no
+// change should be made. Do not return tha array, modify the passed argument inside the function
+// 
+// Original vector			   Modified vector 
+// [ 1, 0, 1, 0, 0, 1, 1 ]     [ 0, 0, 0, 1, 1, 1, 1 ] 
+// [ 3, 3, 2 ]                 [ 2, 3, 3 ]
+//
+function evensLeft(array) {
+	var evens = [];
+	var odds = [];
+	for (var i=0; i<array.length; i++){
+		if (array[i]%2 == 0)
+			evens.push(array[i]);
+		else
+			odds.push(array[i]);
+	}
+	for (var i=0; i<evens.length; i++)
+		array[i] = evens[i];
+	for (var i=0; i<odds.length; i++)
+		array[i+evens.length] = odds[i];
+}
+
+var a = [ 1, 0, 1, 0, 0, 1, 1 ];
+var b = [ 3, 3, 2 ];
+evensLeft(a);
+evensLeft(b);
+document.write("should see 0? " + a[0] + "<br>");
+document.write("should see 0? " + a[1] + "<br>");
+document.write("should see 0? " + a[2] + "<br>");
+document.write("should see 1? " + a[3] + "<br>");
+document.write("should see 1? " + a[4] + "<br>");
+document.write("should see 1? " + a[5] + "<br>");
+document.write("should see 1? " + a[6] + "<br>");
+document.write("should see 2? " + b[0] + "<br>");
+document.write("should see 3? " + b[1] + "<br>");
+document.write("should see 3? " + b[2] + "<br><br>");
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+THESE ARE THE VOTERS:
+Voter: name=Abigail preferences: Baseball Football League_of_Legends Soccer Basketball
+Voter: name=Alex preferences: Football Baseball Soccer League_of_Legends Basketball
+Voter: name=Timothy preferences: Baseball Football Basketball Soccer League_of_Legends
+Voter: name=Zachary preferences: Basketball League_of_Legends Football Soccer Baseball
+Voter: name=Sujan preferences: Football Basketball Soccer League_of_Legends Baseball
+Voter: name=Sarina preferences: Football Basketball Soccer Baseball League_of_Legends
+Voter: name=Allan preferences: Football Soccer Basketball League_of_Legends Baseball
+Voter: name=Robert preferences: Baseball League_of_Legends Basketball Soccer Football
+Voter: name=Kyle preferences: Soccer Baseball Basketball Football League_of_Legends
+Voter: name=David preferences: League_of_Legends Soccer Baseball Football Basketball
+Voter: name=Theo preferences: Football League_of_Legends Baseball Basketball Soccer
+Voter: name=Cody preferences: Football Soccer Baseball League_of_Legends Basketball
+THESE ARE THE CANDIDATES:
+Baseball
+Basketball
+Football
+Soccer
+League_of_Legends
+STARTING A SIMPLE ELECTION:
+Beginning voting...
+Abigail votes for Baseball
+Alex votes for Football
+Timothy votes for Baseball
+Zachary votes for Basketball
+Sujan votes for Football
+Sarina votes for Football
+Allan votes for Football
+Robert votes for Baseball
+Kyle votes for Soccer
+David votes for League_of_Legends
+Theo votes for Football
+Cody votes for Football
+Voting has ended...
+Football WON THE SIMPLE ELECTION.
+STARTING AN ALTERNATIVE VOTE ELECTION:
+Beginning voting...
+Abigail votes for Baseball
+Alex votes for Football
+Timothy votes for Baseball
+Zachary votes for Basketball
+Sujan votes for Football
+Sarina votes for Football
+Allan votes for Football
+Robert votes for Baseball
+Kyle votes for Soccer
+David votes for League_of_Legends
+Theo votes for Football
+Cody votes for Football
+Voting has ended...
+No winner yet.  Removing the candidate Basketball
+Beginning voting...
+Abigail votes for Baseball
+Alex votes for Football
+Timothy votes for Baseball
+Zachary votes for League_of_Legends
+Sujan votes for Football
+Sarina votes for Football
+Allan votes for Football
+Robert votes for Baseball
+Kyle votes for Soccer
+David votes for League_of_Legends
+Theo votes for Football
+Cody votes for Football
+Voting has ended...
+No winner yet.  Removing the candidate Soccer
+Beginning voting...
+Abigail votes for Baseball
+Alex votes for Football
+Timothy votes for Baseball
+Zachary votes for League_of_Legends
+Sujan votes for Football
+Sarina votes for Football
+Allan votes for Football
+Robert votes for Baseball
+Kyle votes for Baseball
+David votes for League_of_Legends
+Theo votes for Football
+Cody votes for Football
+Voting has ended...
+No winner yet.  Removing the candidate League_of_Legends
+Beginning voting...
+Abigail votes for Baseball
+Alex votes for Football
+Timothy votes for Baseball
+Zachary votes for Football
+Sujan votes for Football
+Sarina votes for Football
+Allan votes for Football
+Robert votes for Baseball
+Kyle votes for Baseball
+David votes for Baseball
+Theo votes for Football
+Cody votes for Football
+Voting has ended...
+Football WON THE ALTERNATIVE VOTE ELECTION.

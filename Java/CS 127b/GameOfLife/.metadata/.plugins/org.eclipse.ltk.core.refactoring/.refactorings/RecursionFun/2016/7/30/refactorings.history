@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;LinkedListWithRecursion&apos; to &apos;LinkedList&apos;&#x0D;&#x0A;- Original project: &apos;RecursionFun&apos;&#x0D;&#x0A;- Original element: &apos;LinkedListWithRecursion&apos;&#x0D;&#x0A;- Renamed element: &apos;LinkedList&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LinkedListWithRecursion&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{LinkedListWithRecursion.java[LinkedListWithRecursion" matchStrategy="1" name="LinkedList" qualified="false" references="true" similarDeclarations="false" stamp="1469051349498" textual="false" version="1.0"/>
+</session>

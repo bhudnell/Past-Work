@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;ref&apos; in &apos;LinkedPriorityList.moveToLast(...)&apos; to &apos;last&apos;&#x0D;&#x0A;- Original project: &apos;LinkedPriorityList&apos;&#x0D;&#x0A;- Original element: &apos;LinkedPriorityList.moveToLast(int).ref&apos;&#x0D;&#x0A;- Renamed element: &apos;ref&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;ref&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{LinkedPriorityList.java[LinkedPriorityList~moveToLast~I@ref!6814!6834!6819!6821!QNode;!0!false" name="last" references="true" stamp="1467321880878" version="1.0"/>
+</session>

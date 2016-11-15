@@ -1,0 +1,15 @@
+McDonalds Olive_Garden Sweet_Tomatoes Coffee_Shop Lunch_from_Home
+
+Alice     Sweet_Tomatoes  Lunch_from_Home Coffee_Shop     McDonalds       Olive_Garden
+Bob       Sweet_Tomatoes  McDonalds       Olive_Garden    Lunch_from_Home Coffee_Shop
+Chuck     Olive_Garden    Lunch_from_Home Sweet_Tomatoes  McDonalds       Coffee_Shop
+Denise    Olive_Garden    McDonalds       Coffee_Shop     Lunch_from_Home Sweet_Tomatoes
+Efren     Olive_Garden    Lunch_from_Home Coffee_Shop     Sweet_Tomatoes  McDonalds
+Francis   Sweet_Tomatoes  Coffee_Shop     Lunch_from_Home Olive_Garden    McDonalds
+Grant     Sweet_Tomatoes  Coffee_Shop     McDonalds       Olive_Garden    Lunch_from_Home
+Holly     Coffee_Shop     Lunch_from_Home McDonalds       Sweet_Tomatoes  Olive_Garden
+Ingrid    Coffee_Shop     McDonalds       Sweet_Tomatoes  Lunch_from_Home Olive_Garden
+James     Lunch_from_Home Coffee_Shop     Sweet_Tomatoes  McDonalds       Olive_Garden
+Kelly     Sweet_Tomatoes  Coffee_Shop     Lunch_from_Home McDonalds       Olive_Garden
+Louis     McDonalds       Sweet_Tomatoes  Olive_Garden    Lunch_from_Home Coffee_Shop
+

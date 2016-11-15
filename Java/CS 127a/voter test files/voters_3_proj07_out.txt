@@ -1,0 +1,96 @@
+THESE ARE THE VOTERS:
+Voter: name=Alice preferences: Sweet_Tomatoes Lunch_from_Home Coffee_Shop McDonalds Olive_Garden
+Voter: name=Bob preferences: Sweet_Tomatoes McDonalds Olive_Garden Lunch_from_Home Coffee_Shop
+Voter: name=Chuck preferences: Olive_Garden Lunch_from_Home Sweet_Tomatoes McDonalds Coffee_Shop
+Voter: name=Denise preferences: Olive_Garden McDonalds Coffee_Shop Lunch_from_Home Sweet_Tomatoes
+Voter: name=Efren preferences: Olive_Garden Lunch_from_Home Coffee_Shop Sweet_Tomatoes McDonalds
+Voter: name=Francis preferences: Sweet_Tomatoes Coffee_Shop Lunch_from_Home Olive_Garden McDonalds
+Voter: name=Grant preferences: Sweet_Tomatoes Coffee_Shop McDonalds Olive_Garden Lunch_from_Home
+Voter: name=Holly preferences: Coffee_Shop Lunch_from_Home McDonalds Sweet_Tomatoes Olive_Garden
+Voter: name=Ingrid preferences: Coffee_Shop McDonalds Sweet_Tomatoes Lunch_from_Home Olive_Garden
+Voter: name=James preferences: Lunch_from_Home Coffee_Shop Sweet_Tomatoes McDonalds Olive_Garden
+Voter: name=Kelly preferences: Sweet_Tomatoes Coffee_Shop Lunch_from_Home McDonalds Olive_Garden
+Voter: name=Louis preferences: McDonalds Sweet_Tomatoes Olive_Garden Lunch_from_Home Coffee_Shop
+THESE ARE THE CANDIDATES:
+McDonalds
+Olive_Garden
+Sweet_Tomatoes
+Coffee_Shop
+Lunch_from_Home
+STARTING A SIMPLE ELECTION:
+Beginning voting...
+Alice votes for Sweet_Tomatoes
+Bob votes for Sweet_Tomatoes
+Chuck votes for Olive_Garden
+Denise votes for Olive_Garden
+Efren votes for Olive_Garden
+Francis votes for Sweet_Tomatoes
+Grant votes for Sweet_Tomatoes
+Holly votes for Coffee_Shop
+Ingrid votes for Coffee_Shop
+James votes for Lunch_from_Home
+Kelly votes for Sweet_Tomatoes
+Louis votes for McDonalds
+Voting has ended...
+Sweet_Tomatoes WON THE SIMPLE ELECTION.
+STARTING AN ALTERNATIVE VOTE ELECTION:
+Beginning voting...
+Alice votes for Sweet_Tomatoes
+Bob votes for Sweet_Tomatoes
+Chuck votes for Olive_Garden
+Denise votes for Olive_Garden
+Efren votes for Olive_Garden
+Francis votes for Sweet_Tomatoes
+Grant votes for Sweet_Tomatoes
+Holly votes for Coffee_Shop
+Ingrid votes for Coffee_Shop
+James votes for Lunch_from_Home
+Kelly votes for Sweet_Tomatoes
+Louis votes for McDonalds
+Voting has ended...
+No winner yet.  Removing the candidate McDonalds
+Beginning voting...
+Alice votes for Sweet_Tomatoes
+Bob votes for Sweet_Tomatoes
+Chuck votes for Olive_Garden
+Denise votes for Olive_Garden
+Efren votes for Olive_Garden
+Francis votes for Sweet_Tomatoes
+Grant votes for Sweet_Tomatoes
+Holly votes for Coffee_Shop
+Ingrid votes for Coffee_Shop
+James votes for Lunch_from_Home
+Kelly votes for Sweet_Tomatoes
+Louis votes for Sweet_Tomatoes
+Voting has ended...
+No winner yet.  Removing the candidate Lunch_from_Home
+Beginning voting...
+Alice votes for Sweet_Tomatoes
+Bob votes for Sweet_Tomatoes
+Chuck votes for Olive_Garden
+Denise votes for Olive_Garden
+Efren votes for Olive_Garden
+Francis votes for Sweet_Tomatoes
+Grant votes for Sweet_Tomatoes
+Holly votes for Coffee_Shop
+Ingrid votes for Coffee_Shop
+James votes for Coffee_Shop
+Kelly votes for Sweet_Tomatoes
+Louis votes for Sweet_Tomatoes
+Voting has ended...
+No winner yet.  Removing the candidate Olive_Garden
+Beginning voting...
+Alice votes for Sweet_Tomatoes
+Bob votes for Sweet_Tomatoes
+Chuck votes for Sweet_Tomatoes
+Denise votes for Coffee_Shop
+Efren votes for Coffee_Shop
+Francis votes for Sweet_Tomatoes
+Grant votes for Sweet_Tomatoes
+Holly votes for Coffee_Shop
+Ingrid votes for Coffee_Shop
+James votes for Coffee_Shop
+Kelly votes for Sweet_Tomatoes
+Louis votes for Sweet_Tomatoes
+Voting has ended...
+Sweet_Tomatoes WON THE ALTERNATIVE VOTE ELECTION.

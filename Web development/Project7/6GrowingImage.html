@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	var height = 62;
+	var width = 62;
+
+	function growImage(){
+		height += 5;
+		width += 10;
+		var img = document.getElementById("image");
+		
+		img.style.width = "" + width + "px";
+		img.style.height = "" + height + "px";
+	}
+</script>
+</head>
+<body>
+	Click the image to see it grow.<br><br>
+	<img src="./pillars.jpg" alt="pillars.jpg" id="image" onclick="growImage()" style="width:62px; height:62px;">
+</body>
+</html>

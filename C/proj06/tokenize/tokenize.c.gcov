@@ -1,0 +1,115 @@
+        -:    0:Source:tokenize.c
+        -:    0:Graph:tokenize.gcno
+        -:    0:Data:tokenize.gcda
+        -:    0:Runs:28
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * File: tokenize.c
+        -:    3: * Author: Brendon Hudnell
+        -:    4: * Purpose: A program that reads lines of input, tokenizes each line, stores the tokens in a linked list,
+        -:    5: *          then prints out the tokens of each line.
+        -:    6: */
+        -:    7:
+        -:    8:#include <stdio.h>
+        -:    9:#include <stdlib.h>
+        -:   10:#include <string.h>
+        -:   11:
+        -:   12:/*
+        -:   13: * isWhitespace(chr) -- returns 0 if the character is a space, tab, or newline. Returns 1 otherwise.
+        -:   14: */
+     3164:   15:int isWhitespace(char chr){
+     3164:   16:	if (chr == ' ' || chr == '\t' || chr == '\n')
+      530:   17:		return 1;
+     2634:   18:	return 0;
+        -:   19:}
+        -:   20:
+       28:   21:int main(){
+        -:   22:	typedef struct node{
+        -:   23:		struct node *next;
+        -:   24:		int count;
+        -:   25:		char **tokens;
+        -:   26:	} node;
+        -:   27:
+       28:   28:	char *buff = NULL;
+       28:   29:	node *head = NULL;
+       28:   30:	node *ptr = NULL;
+       28:   31:	node *curr = NULL;
+        -:   32:	int j, i, tokenloc, bufflen;
+       28:   33:	int lines = 0;
+       28:   34:	int tokens = 0;
+       28:   35:	size_t len = 0;
+        -:   36:
+      212:   37:	while (getline(&buff, &len, stdin) != -1){
+        -:   38:
+      156:   39:		ptr = malloc(sizeof(node));
+      156:   40:		if (ptr == NULL){
+    #####:   41:			fprintf(stderr, "ERROR: Out of memory.\n");
+    #####:   42:			return 1;
+        -:   43:		}
+      156:   44:		ptr->next = NULL;
+      156:   45:		ptr->tokens = NULL;
+      156:   46:		ptr->count = 0;
+        -:   47:
+      156:   48:		bufflen = strlen(buff);
+        -:   49:		//counting the number of tokens in the line
+      156:   50:		if (!isWhitespace(buff[0]) && buff[0] != '\0')
+       90:   51:			ptr->count++;
+     1484:   52:		for (i=1; i<bufflen; i++){
+     1328:   53:			if (isWhitespace(buff[i-1]) && !isWhitespace(buff[i]))
+      158:   54:				ptr->count++;
+        -:   55:		}
+        -:   56:
+        -:   57:		//allocating the array of pointers
+      156:   58:		ptr->tokens = malloc(ptr->count*sizeof(char*));
+      156:   59:		if (ptr->tokens == NULL){
+    #####:   60:			fprintf(stderr, "ERROR: Out of memory.\n");
+    #####:   61:			return 1;
+        -:   62:		}
+      156:   63:		tokenloc = 0;
+        -:   64:
+        -:   65:		//check first char for token start
+      156:   66:		if (!isWhitespace(buff[0]) && buff[0] != '\0'){
+       90:   67:			ptr->tokens[tokenloc] = &buff[0];
+       90:   68:			tokenloc++;
+        -:   69:		}
+        -:   70:		else
+       66:   71:			buff[0] = '\0';
+        -:   72:
+        -:   73:		//check rest of chars for token start
+     1484:   74:		for (i=1; i<bufflen; i++){
+     1328:   75:			if (!isWhitespace(buff[i])){
+     1088:   76:				if (buff[i-1] == '\0'){
+      158:   77:					ptr->tokens[tokenloc] = &buff[i];
+      158:   78:					tokenloc++;
+        -:   79:				}
+        -:   80:			}
+        -:   81:			else
+      240:   82:				buff[i] = '\0';
+        -:   83:		}
+        -:   84:
+      156:   85:		lines++;
+      156:   86:		tokens += ptr->count;
+      156:   87:		if (head == NULL){
+       28:   88:			head = ptr;
+       28:   89:			curr = head;
+        -:   90:		}
+        -:   91:		else{
+      128:   92:			curr->next = ptr;
+      128:   93:			curr = curr->next;
+        -:   94:		}
+      156:   95:		ptr = NULL;
+      156:   96:		buff = NULL;
+        -:   97:	}
+        -:   98:
+       28:   99:	printf("Lines=%d Tokens=%d\n", lines, tokens);
+       28:  100:	ptr = head;
+       28:  101:	i=0;
+      212:  102:	while (ptr != NULL){
+      156:  103:		printf("Line=%d Tokens: %d\n", i, ptr->count);
+      404:  104:		for (j=0; j < ptr->count; j++)
+      248:  105:			printf("  Line=%d Token=%d: \"%s\"\n", i, j, ptr->tokens[j]);
+      156:  106:		i++;
+      156:  107:		ptr = ptr->next;
+        -:  108:	}
+       28:  109:	return 0;
+        -:  110:}

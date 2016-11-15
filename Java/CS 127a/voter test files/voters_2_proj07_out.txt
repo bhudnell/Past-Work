@@ -1,0 +1,96 @@
+THESE ARE THE VOTERS:
+Voter: name=xkcd preferences: Wordpad DrJava emacs Notepad vi
+Voter: name=Russ preferences: vi emacs DrJava Notepad Wordpad
+Voter: name=Torvalds preferences: emacs Wordpad vi Notepad DrJava
+Voter: name=Notch preferences: DrJava Wordpad Notepad emacs vi
+Voter: name=Ballmer preferences: DrJava emacs Wordpad vi Notepad
+Voter: name=Guido_Rossum preferences: emacs vi Wordpad Notepad DrJava
+Voter: name=Rowling preferences: Notepad Wordpad DrJava vi emacs
+Voter: name=Asimov preferences: DrJava vi Notepad emacs Wordpad
+Voter: name=Cleese preferences: DrJava vi Wordpad emacs Notepad
+Voter: name=Palin preferences: DrJava emacs Wordpad vi Notepad
+Voter: name=Gilliam preferences: emacs Wordpad DrJava vi Notepad
+Voter: name=infinite_monkeys preferences: emacs DrJava Wordpad Notepad vi
+THESE ARE THE CANDIDATES:
+vi
+emacs
+Notepad
+Wordpad
+DrJava
+STARTING A SIMPLE ELECTION:
+Beginning voting...
+xkcd votes for Wordpad
+Russ votes for vi
+Torvalds votes for emacs
+Notch votes for DrJava
+Ballmer votes for DrJava
+Guido_Rossum votes for emacs
+Rowling votes for Notepad
+Asimov votes for DrJava
+Cleese votes for DrJava
+Palin votes for DrJava
+Gilliam votes for emacs
+infinite_monkeys votes for emacs
+Voting has ended...
+DrJava WON THE SIMPLE ELECTION.
+STARTING AN ALTERNATIVE VOTE ELECTION:
+Beginning voting...
+xkcd votes for Wordpad
+Russ votes for vi
+Torvalds votes for emacs
+Notch votes for DrJava
+Ballmer votes for DrJava
+Guido_Rossum votes for emacs
+Rowling votes for Notepad
+Asimov votes for DrJava
+Cleese votes for DrJava
+Palin votes for DrJava
+Gilliam votes for emacs
+infinite_monkeys votes for emacs
+Voting has ended...
+No winner yet.  Removing the candidate vi
+Beginning voting...
+xkcd votes for Wordpad
+Russ votes for emacs
+Torvalds votes for emacs
+Notch votes for DrJava
+Ballmer votes for DrJava
+Guido_Rossum votes for emacs
+Rowling votes for Notepad
+Asimov votes for DrJava
+Cleese votes for DrJava
+Palin votes for DrJava
+Gilliam votes for emacs
+infinite_monkeys votes for emacs
+Voting has ended...
+No winner yet.  Removing the candidate Notepad
+Beginning voting...
+xkcd votes for Wordpad
+Russ votes for emacs
+Torvalds votes for emacs
+Notch votes for DrJava
+Ballmer votes for DrJava
+Guido_Rossum votes for emacs
+Rowling votes for Wordpad
+Asimov votes for DrJava
+Cleese votes for DrJava
+Palin votes for DrJava
+Gilliam votes for emacs
+infinite_monkeys votes for emacs
+Voting has ended...
+No winner yet.  Removing the candidate Wordpad
+Beginning voting...
+xkcd votes for DrJava
+Russ votes for emacs
+Torvalds votes for emacs
+Notch votes for DrJava
+Ballmer votes for DrJava
+Guido_Rossum votes for emacs
+Rowling votes for DrJava
+Asimov votes for DrJava
+Cleese votes for DrJava
+Palin votes for DrJava
+Gilliam votes for emacs
+infinite_monkeys votes for emacs
+Voting has ended...
+DrJava WON THE ALTERNATIVE VOTE ELECTION.

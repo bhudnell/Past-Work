@@ -1,0 +1,254 @@
+        -:    0:Source:phoneCalls.c
+        -:    0:Graph:phoneCalls.gcno
+        -:    0:Data:phoneCalls.gcda
+        -:    0:Runs:15
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * File: phoneCalls.c
+        -:    3: * Author: Brendon Hudnell
+        -:    4: * Purpose: 
+        -:    5: */
+        -:    6:
+        -:    7:#include <stdio.h>
+        -:    8:#include <stdlib.h>
+        -:    9:#include <string.h>
+        -:   10:#include <errno.h>
+        -:   11:
+        -:   12:typedef struct outerNode {
+        -:   13:	char phoneNum[9];
+        -:   14:	struct outerNode *next;
+        -:   15:	struct innerNode *head;
+        -:   16:} outerNode;
+        -:   17:
+        -:   18:typedef struct innerNode {
+        -:   19:	char phoneNum[9];
+        -:   20:	int count;
+        -:   21:	struct innerNode *next;
+        -:   22:} innerNode;
+        -:   23:
+        -:   24:int isPhoneNumber(char *num);
+        -:   25:outerNode* insertIntoOuterList(outerNode *head, char *firstNum, char *secondNum);
+        -:   26:innerNode* insertIntoInnerList(innerNode *head, char *secondNum);
+        -:   27:
+       15:   28:int main(int argc, char **argv){
+        -:   29:
+       15:   30:	int errcode = 0;
+       15:   31:	outerNode *head = NULL;
+        -:   32:	int lineCount, i, errno, rc;
+        -:   33:	FILE *fp;
+        -:   34:	char buff[20], firstNum[10], secondNum[10];
+        -:   35:
+        -:   36:	//checks the command line arguments for error conditions
+       15:   37:	if (argc < 4){
+        1:   38:		fprintf(stderr, "ERROR: Either no file arguments or not 2 phone number arguments.\n");
+        1:   39:		exit(1);
+        -:   40:	}
+       14:   41:	if (!isPhoneNumber(argv[argc-2]) || !isPhoneNumber(argv[argc-1])){
+        1:   42:		fprintf(stderr, "ERROR: The phone number arguments were not in the form xxx-xxxx.\n");
+        1:   43:		exit(1);
+        -:   44:	}
+        -:   45:
+        -:   46:	//main loop to open each file and put its contents in the linked list of linked lists
+       48:   47:	for (i=1; i<argc-2; i++){
+       35:   48:		fp = fopen(argv[i], "r");
+       35:   49:		if (fp == NULL){
+        1:   50:			perror(argv[i]);
+        1:   51:			errcode = 1;
+        1:   52:			continue;
+        -:   53:		}
+       34:   54:		lineCount = 0;
+      180:   55:		while (fgets(buff, 20, fp) != NULL){
+      112:   56:			rc = sscanf(buff, "%9s %9s", firstNum, secondNum);
+        -:   57:
+        -:   58:			// checking file line input for error conditions
+      112:   59:			if (rc < 1)
+        5:   60:				continue;
+      107:   61:			if (rc != 2){
+        4:   62:				fprintf(stderr, "ERROR: Line contains an incorrect number of phone numbers.\n");
+        4:   63:				errcode = 1;
+        4:   64:				continue;
+        -:   65:			}
+      103:   66:			if (!isPhoneNumber(firstNum) || !isPhoneNumber(secondNum)){
+       20:   67:				fprintf(stderr, "ERROR: Line does not contain a phone number.\n");
+       20:   68:				errcode = 1;
+       20:   69:				continue;
+        -:   70:			}
+       83:   71:			if (strcmp(firstNum, secondNum) == 0){
+        1:   72:				fprintf(stderr, "ERROR: Line has identical phone numbers.\n");
+        1:   73:				errcode = 1;
+        1:   74:				continue;
+        -:   75:			}
+        -:   76:
+        -:   77:			//enter two phone numbers into the linked list of linked lists
+       82:   78:			head = insertIntoOuterList(head, firstNum, secondNum);
+       82:   79:			head = insertIntoOuterList(head, secondNum, firstNum);
+       82:   80:			lineCount++;
+        -:   81:		}
+        -:   82:		//empty file error message
+       34:   83:		if (lineCount == 0){
+        2:   84:			fprintf(stderr, "ERROR: Empty file.\n");
+        2:   85:			errcode = 1;
+        -:   86:		}
+       34:   87:	fclose(fp);
+        -:   88:	}
+        -:   89:
+        -:   90:	//searching linked list of linked lists to find the number of times the two numbers called each other
+       13:   91:	outerNode *oCurr = head;
+       62:   92:	while (oCurr != NULL && strcmp(oCurr->phoneNum, argv[argc-2]) < 0)
+       36:   93:		oCurr = oCurr->next;
+       23:   94:	if (oCurr != NULL && strcmp(oCurr->phoneNum, argv[argc-2]) == 0){
+       10:   95:		innerNode *iCurr = oCurr->head;
+       26:   96:		while (iCurr != NULL && strcmp(iCurr->phoneNum, argv[argc-1]) < 0)
+        6:   97:			iCurr = iCurr->next;
+       10:   98:		if (iCurr != NULL && strcmp(iCurr->phoneNum, argv[argc-1]) == 0)
+        8:   99:			printf("%d\n", iCurr->count);
+        -:  100:		else
+        2:  101:			printf("0\n");
+        -:  102:	}
+        -:  103:	else
+        3:  104:		printf("0\n");
+        -:  105:
+        -:  106:	//searching linked list of linked lists to find if the two numbers called the same person
+        -:  107:	outerNode *oPtr0, *oPtr1;
+        -:  108:	innerNode *iPtr0, *iPtr1;
+       13:  109:	iPtr0 = NULL;
+       13:  110:	oPtr0 = NULL;
+       13:  111:	oPtr1 = NULL;
+       13:  112:	oCurr = head;
+       13:  113:	int calledSame = 0;
+      134:  114:	while (oCurr != NULL){
+      108:  115:		if (strcmp(oCurr->phoneNum, argv[argc-2]) == 0)
+       10:  116:			oPtr0 = oCurr;
+      108:  117:		if (strcmp(oCurr->phoneNum, argv[argc-1]) == 0)
+       11:  118:			oPtr1 = oCurr;
+      108:  119:		oCurr = oCurr->next;
+        -:  120:	}
+        -:  121:
+       13:  122:	if (oPtr0 != NULL && oPtr1 != NULL){
+        9:  123:		iPtr0 = oPtr0->head;
+        9:  124:		iPtr1 = oPtr1->head;
+       25:  125:		while (iPtr0 != NULL){
+       31:  126:			while (iPtr1 != NULL){
+       14:  127:				if (strcmp(iPtr0->phoneNum, iPtr1->phoneNum) == 0){
+        3:  128:					calledSame = 1;
+        3:  129:					break;
+        -:  130:				}
+       11:  131:				iPtr1 = iPtr1->next;
+        -:  132:			}
+       10:  133:			if (calledSame)
+        3:  134:				break;
+        7:  135:			iPtr0 = iPtr0->next;
+        -:  136:		}
+        -:  137:	}
+        -:  138:
+       13:  139:	if (calledSame)
+        3:  140:		printf("yes\n");
+        -:  141:	else
+       10:  142:		printf("no\n");
+        -:  143:
+        -:  144:	//freeing the linked list
+       13:  145:	oPtr0 = head;
+      134:  146:	while (oPtr0 != NULL){
+        -:  147:
+      108:  148:		iPtr0 = oPtr0->head;
+      354:  149:		while (iPtr0 != NULL){
+      138:  150:			iPtr1 = iPtr0->next;
+      138:  151:			free(iPtr0);
+      138:  152:			iPtr0 = iPtr1;
+        -:  153:		}
+        -:  154:
+      108:  155:		oPtr1 = oPtr0->next;
+      108:  156:		free(oPtr0);
+      108:  157:		oPtr0 = oPtr1;
+        -:  158:	}
+        -:  159:
+       13:  160:	return errcode;
+        -:  161:}
+        -:  162:
+        -:  163:/*
+        -:  164: * isPhoneNumber(char*) -- returns 1 if num is in the form "xxx-xxxx" where x is an integer
+        -:  165: *                        between 0 and 9. returns 0 otherwise.
+        -:  166: */
+      215:  167:int isPhoneNumber(char *num){
+      215:  168:	int len = strlen(num);
+      215:  169:	if (len != 8)
+       19:  170:		return 0;
+        -:  171:	int i;
+     1752:  172:	for (i=0; i<len; i++){
+     1558:  173:		if (i != 3 && (num[i] < '0' || (int)num[i] > '9'))
+        1:  174:			return 0;
+     1557:  175:		if (i == 3 && num[i] != '-')
+        1:  176:			return 0;
+        -:  177:	}
+      194:  178:	return 1;
+        -:  179:}
+        -:  180:
+        -:  181:/*
+        -:  182: * insertIntoOuterList(outerNode*, char*, char*) -- Scans through the outer list, and inserts
+        -:  183: *				a new outerNode in order, then inserts the innerNode into the outerNode.. Returns
+        -:  184: *				the head of the list. If either number is already in the list, it will just add
+        -:  185: *				an innerNode of the other number to that number's node.
+        -:  186: */
+      164:  187:outerNode* insertIntoOuterList(outerNode *head, char *firstNum, char *secondNum){
+      164:  188:	outerNode *curr = head;
+      164:  189:	outerNode **ptrInPrev = &head;
+        -:  190:
+      797:  191:	while (curr != NULL && strcmp(curr->phoneNum, firstNum) < 0){
+      469:  192:		ptrInPrev = &curr->next;
+      469:  193:		curr = curr->next;
+        -:  194:	}
+        -:  195:
+      164:  196:	if (curr != NULL && strcmp(curr->phoneNum, firstNum) == 0){
+       56:  197:		curr->head = insertIntoInnerList(curr->head, secondNum);
+       56:  198:		return head;
+        -:  199:	}
+        -:  200:
+      108:  201:	outerNode *temp = malloc(sizeof(outerNode));
+      108:  202:	if (temp == NULL){
+    #####:  203:		perror("Failed to allocate a new node for the outer linked list.");
+    #####:  204:		exit(1);
+        -:  205:	}
+        -:  206:
+      108:  207:	strcpy(temp->phoneNum, firstNum);
+      108:  208:	temp->head = NULL;
+      108:  209:	temp->head = insertIntoInnerList(temp->head, secondNum);
+        -:  210:
+      108:  211:	temp->next = curr;
+      108:  212:	*ptrInPrev = temp;
+        -:  213:
+      108:  214:	return head;
+        -:  215:}
+        -:  216:
+        -:  217:/*
+        -:  218: * insertIntoInnerList(innerNode*, char*) -- Scans through the inner list, and inserts
+        -:  219: *				a new innerNode in order. Returnsthe head of the list. If the number is
+        -:  220: *				already in the list, it will just increment the count variable of that node.
+        -:  221: */
+      164:  222:innerNode* insertIntoInnerList(innerNode *head, char *secondNum){
+      164:  223:	innerNode *curr = head;
+      164:  224:	innerNode **ptrInPrev = &head;
+        -:  225:
+      363:  226:	while (curr != NULL && strcmp(curr->phoneNum, secondNum) < 0){
+       35:  227:		ptrInPrev = &curr->next;
+       35:  228:		curr = curr->next;
+        -:  229:	}
+        -:  230:
+      164:  231:	if (curr != NULL && strcmp(curr->phoneNum, secondNum) == 0){
+       26:  232:		curr->count++;
+       26:  233:		return head;
+        -:  234:	}
+        -:  235:
+      138:  236:	innerNode *temp = malloc(sizeof(innerNode));
+      138:  237:	if (temp == NULL){
+    #####:  238:		perror("Failed to allocate a new node for the inner linked list.");
+    #####:  239:		exit(1);
+        -:  240:	}
+        -:  241:
+      138:  242:	strcpy(temp->phoneNum, secondNum);
+      138:  243:	temp->count = 1;
+        -:  244:
+      138:  245:	temp->next = curr;
+      138:  246:	*ptrInPrev = temp;
+        -:  247:
+      138:  248:	return head;
+        -:  249:}

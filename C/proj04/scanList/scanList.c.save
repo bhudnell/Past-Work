@@ -1,0 +1,15 @@
+/*
+ * File: scanList.c
+ * Author: Brendon Hudnell
+ * Purpose: 
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+	int size;
+	char *arr;
+
+	

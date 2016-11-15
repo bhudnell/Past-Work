@@ -1,0 +1,109 @@
+/*
+ * File: linkedList.c
+ * Author: Brendon Hudnell
+ * Purpose: 
+ */
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+	typedef struct node{
+		char *name;
+		int num;
+		struct node *next;
+	} node;
+
+	node *head = NULL;
+	char *line, *command, *tempName;
+	int size, errcode, i, tempNum;
+	errcode = 0;
+	size = 0;
+	line = malloc(80);
+	command = malloc(80);
+	tempName = malloc(80);
+	if (line == NULL || command == NULL || tempName == NULL){
+		fprintf(stderr, "ERROR: Out of memory.\n");
+		return 1;
+	}
+
+	//Main loop
+	while (fgets(line, 81, stdin) != NULL){
+		if (line[0] == '\n')
+			continue;
+		for(i=0; i<81; i++){
+			if (line[i] == '\0')
+				break;
+		}
+		if (i == 81){
+			fprintf(stderr, "ERROR: Line was over 80 characters in length.\n");
+			return 1;
+		}
+
+		if (sscanf(line, "%79s %79s %d", command, tempName, &tempNum) == 0){
+			fprintf(stderr, "ERROR: invalid line\n");
+			errcode = 1;
+			continue;
+		}
+
+		// Print command
+		if (strcmp(command, "print") == 0){
+			node *curr = head;
+			printf("%d:", size);
+			while (curr != NULL){
+				printf(" %s/%d", curr->name, curr->num);
+				curr = curr->next;
+			}
+			printf("\n");
+		}
+
+		// Insert command
+		else if (strcmp(command, "insert") == 0){
+			//Insert at front case
+			if (head == NULL || strcmp(tempName, head->name) < 0){
+				node *temp = malloc(sizeof(node));
+				temp->name = tempName;
+				temp->num = tempNum;
+				temp->next = head;
+				head = temp;
+	
+			}
+
+			//Insert elsewhere case
+			
+		}
+		else if (strcmp(command, "delete") == 0){
+			if (strcmp(tempName, head->name) == 0){
+				head = head->next;
+				continue;
+			}
+
+			node *curr = head->next;
+			node *prev = head;
+			while (curr != NULL){
+				if (strcmp(tempName, curr->name) == 0){
+					prev->next = curr->next;
+					continue;
+				}
+			}
+			fprintf(stderr, "ERROR: That name does not exist in the list.\n");
+			errcode = 1;
+		}
+		else if (strcmp(command, "removeHead") == 0){
+			if (head == NULL){
+				fprintf(stderr, "ERROR: list is already empty.\n");
+				errcode = 1;
+				continue;
+			}
+			head = head->next;
+			size --;
+		}
+		else{
+			fprintf(stderr, "ERROR: command not recognized.\n");
+			errcode = 1;
+			continue;
+		}
+	}
+	return errcode;
+}

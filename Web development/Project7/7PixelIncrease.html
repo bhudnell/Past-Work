@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	var count = 16;
+
+	function IncPixel(){
+		count++;
+		var div = document.getElementById("this");
+		
+		div.style.fontSize = "" + count + "px";
+	}
+</script>
+</head>
+<body>
+	<button onclick="IncPixel()">Increment by 1px</button><br><br>
+	<div id="this">Increase my point size by 1px each click.</div>
+</body>
+</html>

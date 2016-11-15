@@ -1,0 +1,114 @@
+@charset "iso-8859-1";
+
+/* Author: Brendon Hudnell
+ *
+ * Contains the styles for the tmnt.html file.
+ */
+body {
+	background-image: url('images/moviebg.png');
+}
+
+#banner {
+	background-image: url('images/rancidbannerbg.png');
+	height: 50px;
+	width: 100%;
+}
+
+h1 {
+	font-size: 24pt;
+	font-weight: bold;
+	font-family: Georgia, 'Times New Roman', serif;
+	text-shadow: 2px 2px dimgray;
+	text-align: center;
+}
+
+.overallarea {
+	position: relative;
+	width: 800px;
+	margin: auto;
+	box-shadow: 10px 10px 10px gray;
+	border-radius: 25px;
+	overflow: auto;
+	background-color: lightgray;
+}
+
+.rottenbig {
+	border-top-left-radius: 25px;
+	background-image: url('images/rottenlargebg.png');
+	height: 83px;
+	font-size: 48pt;
+	color: red;
+	font-family: sans-serif;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.contentarea {
+	float: left;
+	background-color: lightgray;
+	width: 550px;
+}
+
+.split {
+	width: 255px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 15px;
+}
+
+p.review {
+	background-color: white;
+	font-size: 10pt;
+	border: 2px solid darkgray;
+	border-radius: 20px;
+	font-family: Georgia, 'Times New Roman', serif;
+	padding: 8px;
+	overflow: auto;
+}
+
+p.review img {
+	float: left;
+	margin-right: 5px;
+}
+
+p.reviewer img {
+	float: left;
+}
+
+#overviewimage {
+	float: right;
+	border-top-right-radius: 25px;
+}
+
+.overview {
+	width: 250px;
+	float: right;
+	background-color: darkseagreen;
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+	clean: both;
+}
+
+dd, dt {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+dt {
+	padding-top: 5px;
+}
+
+ul {
+	list-style: none;
+	text-align: left;
+}
+
+#reviewnums {
+	width: 550px;
+	margin: auto;
+	text-align: center;
+	background-color: darkseagreen;
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 10px;
+}

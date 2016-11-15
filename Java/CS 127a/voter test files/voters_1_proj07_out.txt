@@ -1,0 +1,96 @@
+THESE ARE THE VOTERS:
+Voter: name=red_squirrel preferences: Turtle Owl Gorilla Tiger Leopard
+Voter: name=fox preferences: Leopard Tiger Gorilla Owl Turtle
+Voter: name=wolf preferences: Leopard Gorilla Turtle Owl Tiger
+Voter: name=hyena preferences: Gorilla Turtle Owl Leopard Tiger
+Voter: name=baboon preferences: Gorilla Owl Leopard Tiger Turtle
+Voter: name=puffin preferences: Owl Turtle Gorilla Tiger Leopard
+Voter: name=shrew preferences: Leopard Turtle Gorilla Tiger Owl
+Voter: name=frog preferences: Gorilla Tiger Leopard Owl Turtle
+Voter: name=gray_squirrel preferences: Gorilla Leopard Turtle Owl Tiger
+Voter: name=pig preferences: Gorilla Turtle Owl Leopard Tiger
+Voter: name=ocelot preferences: Leopard Tiger Gorilla Turtle Owl
+Voter: name=rodent preferences: Owl Tiger Leopard Turtle Gorilla
+THESE ARE THE CANDIDATES:
+Gorilla
+Leopard
+Tiger
+Turtle
+Owl
+STARTING A SIMPLE ELECTION:
+Beginning voting...
+red_squirrel votes for Turtle
+fox votes for Leopard
+wolf votes for Leopard
+hyena votes for Gorilla
+baboon votes for Gorilla
+puffin votes for Owl
+shrew votes for Leopard
+frog votes for Gorilla
+gray_squirrel votes for Gorilla
+pig votes for Gorilla
+ocelot votes for Leopard
+rodent votes for Owl
+Voting has ended...
+Gorilla WON THE SIMPLE ELECTION.
+STARTING AN ALTERNATIVE VOTE ELECTION:
+Beginning voting...
+red_squirrel votes for Turtle
+fox votes for Leopard
+wolf votes for Leopard
+hyena votes for Gorilla
+baboon votes for Gorilla
+puffin votes for Owl
+shrew votes for Leopard
+frog votes for Gorilla
+gray_squirrel votes for Gorilla
+pig votes for Gorilla
+ocelot votes for Leopard
+rodent votes for Owl
+Voting has ended...
+No winner yet.  Removing the candidate Tiger
+Beginning voting...
+red_squirrel votes for Turtle
+fox votes for Leopard
+wolf votes for Leopard
+hyena votes for Gorilla
+baboon votes for Gorilla
+puffin votes for Owl
+shrew votes for Leopard
+frog votes for Gorilla
+gray_squirrel votes for Gorilla
+pig votes for Gorilla
+ocelot votes for Leopard
+rodent votes for Owl
+Voting has ended...
+No winner yet.  Removing the candidate Turtle
+Beginning voting...
+red_squirrel votes for Owl
+fox votes for Leopard
+wolf votes for Leopard
+hyena votes for Gorilla
+baboon votes for Gorilla
+puffin votes for Owl
+shrew votes for Leopard
+frog votes for Gorilla
+gray_squirrel votes for Gorilla
+pig votes for Gorilla
+ocelot votes for Leopard
+rodent votes for Owl
+Voting has ended...
+No winner yet.  Removing the candidate Owl
+Beginning voting...
+red_squirrel votes for Gorilla
+fox votes for Leopard
+wolf votes for Leopard
+hyena votes for Gorilla
+baboon votes for Gorilla
+puffin votes for Gorilla
+shrew votes for Leopard
+frog votes for Gorilla
+gray_squirrel votes for Gorilla
+pig votes for Gorilla
+ocelot votes for Leopard
+rodent votes for Leopard
+Voting has ended...
+Gorilla WON THE ALTERNATIVE VOTE ELECTION.

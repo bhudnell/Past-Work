@@ -1,0 +1,5 @@
+bluebird:78.3 89.3 77.0
+TANAGER: 111.9 107.65
+BlueBird: 69.9
+bluebirD: 91.9
+tanager: 108.0 110.0

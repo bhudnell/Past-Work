@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	var num = 1
+	
+	function addArray(){
+		var input = document.getElementById("name");
+		var div = document.getElementById("array");
+		var name = input.value;
+		input.value = "";
+		
+		div.innerHTML += num + ": " + name + "<br>";
+		num++;
+	}
+</script>
+</head>
+<body>
+	Enter a name: <input type="text" id="name" onchange="addArray()"><br><br>
+	<div id="array">
+	The array of names:<br><br>
+	</div>
+</body>
+</html>

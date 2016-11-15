@@ -1,0 +1,15 @@
+vi emacs Notepad Wordpad DrJava
+
+xkcd             Wordpad DrJava  emacs   Notepad vi
+Russ             vi      emacs   DrJava  Notepad Wordpad
+Torvalds         emacs   Wordpad vi      Notepad DrJava
+Notch            DrJava  Wordpad Notepad emacs   vi
+Ballmer          DrJava  emacs   Wordpad vi      Notepad
+Guido_Rossum     emacs   vi      Wordpad Notepad DrJava
+Rowling          Notepad Wordpad DrJava  vi      emacs
+Asimov           DrJava  vi      Notepad emacs   Wordpad
+Cleese           DrJava  vi      Wordpad emacs   Notepad
+Palin            DrJava  emacs   Wordpad vi      Notepad
+Gilliam          emacs   Wordpad DrJava  vi      Notepad
+infinite_monkeys emacs   DrJava  Wordpad Notepad vi
+

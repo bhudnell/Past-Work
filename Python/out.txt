@@ -1,0 +1,119 @@
+---------- SocialPerson Options ----------
+1) Create a new SocialPerson
+2) Load a SocialPerson from file
+3) Cancel
+Enter option number: Enter filename: ---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: ---------- me ----------
+Rich Thompson: 5/21, rm@g
+My status is: Married
+
+------- friends --------
+1)  Ryan Manner: 2/9, manner@j
+2)  Suse Blues: 11/54, sb@g
+
+---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: Enter person's first name: Enter person's last name: Enter person's birthday: Enter person's e-mail: ---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: ---------- me ----------
+Rich Thompson: 5/21, rm@g
+My status is: Married
+
+------- friends --------
+1)  John Doe: 4/3, jd@g
+2)  Ryan Manner: 2/9, manner@j
+3)  Suse Blues: 11/54, sb@g
+
+---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: ------- friends --------
+1)  John Doe: 4/3, jd@g
+2)  Ryan Manner: 2/9, manner@j
+3)  Suse Blues: 11/54, sb@g
+------------------------
+Enter friend number or 0 to cancel: ---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: ------- friends --------
+1)  John Doe: 4/3, jd@g
+2)  Ryan Manner: 2/9, manner@j
+3)  Suse Blues: 11/54, sb@g
+------------------------
+Enter friend number or 0 to cancel: ---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: ---------- me ----------
+Rich Thompson: 5/21, rm@g
+My status is: Married
+
+------- friends --------
+1)  Ryan Manner: 2/9, manner@j
+2)  Suse Blues: 11/54, sb@g
+
+---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: Enter person's first name: Enter person's last name: Enter person's birthday: Enter person's e-mail: ---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: ------- friends --------
+1)  Jane Doe: 5/10, jane@g
+2)  Ryan Manner: 2/9, manner@j
+3)  Suse Blues: 11/54, sb@g
+------------------------
+Enter friend number or 0 to cancel: ---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: ---------- me ----------
+Rich Thompson: 5/21, rm@g
+My status is: Married
+
+------- friends --------
+1)  Jane Doe: 5/10, jane@g
+2)  Suse Blues: 11/54, sb@g
+
+---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: Enter save filename: ---------- SocialPerson Options ----------
+1) Add a friend
+2) Unfriend someone
+3) Print to screen
+4) Save
+5) Exit
+Enter option number: 

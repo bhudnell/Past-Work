@@ -1,0 +1,111 @@
+THESE ARE THE VOTERS:
+Voter: name=Voter0 preferences: Invalid1 Invalid2 Invalid3 Invalid4 One
+Voter: name=Voter1 preferences: Invalid1 Invalid2 Invalid3 Two Invalid4
+Voter: name=Voter2 preferences: Invalid1 Invalid2 One Invalid3 Invalid4
+Voter: name=Voter3 preferences: One Invalid1 Invalid2 Invalid3 Invalid4
+Voter: name=Voter4 preferences: Invalid1 Invalid2 Invalid3 Invalid4 Two
+Voter: name=Voter5 preferences: Invalid1 Invalid2 Invalid3 Two Invalid4
+Voter: name=Voter6 preferences: Invalid1 Invalid2 Invalid3 Invalid4 Three
+Voter: name=Voter7 preferences: Invalid1 Invalid2 Three Invalid3 Invalid4
+Voter: name=Voter8 preferences: Invalid1 Invalid2 Invalid3 Invalid4 Four
+Voter: name=Voter9 preferences: Invalid1 Four Invalid2 Invalid3 Invalid4
+Voter: name=VoterA preferences: Invalid1 Invalid2 Invalid3 Invalid4 Five
+Voter: name=VoterB preferences: Five Invalid1 Invalid2 Invalid3 Invalid4
+THESE ARE THE CANDIDATES:
+One
+Two
+Three
+Four
+Five
+STARTING A SIMPLE ELECTION:
+Beginning voting...
+Voter0 votes for One
+Voter1 votes for Two
+Voter2 votes for One
+Voter3 votes for One
+Voter4 votes for Two
+Voter5 votes for Two
+Voter6 votes for Three
+Voter7 votes for Three
+Voter8 votes for Four
+Voter9 votes for Four
+VoterA votes for Five
+VoterB votes for Five
+Voting has ended...
+One WON THE SIMPLE ELECTION.
+STARTING AN ALTERNATIVE VOTE ELECTION:
+Beginning voting...
+Voter0 votes for One
+Voter1 votes for Two
+Voter2 votes for One
+Voter3 votes for One
+Voter4 votes for Two
+Voter5 votes for Two
+Voter6 votes for Three
+Voter7 votes for Three
+Voter8 votes for Four
+Voter9 votes for Four
+VoterA votes for Five
+VoterB votes for Five
+Voting has ended...
+No winner yet.  Removing the candidate Three
+Beginning voting...
+Voter0 votes for One
+Voter1 votes for Two
+Voter2 votes for One
+Voter3 votes for One
+Voter4 votes for Two
+Voter5 votes for Two
+Voter6 chooses not to vote.
+Voter7 chooses not to vote.
+Voter8 votes for Four
+Voter9 votes for Four
+VoterA votes for Five
+VoterB votes for Five
+Voting has ended...
+No winner yet.  Removing the candidate Four
+Beginning voting...
+Voter0 votes for One
+Voter1 votes for Two
+Voter2 votes for One
+Voter3 votes for One
+Voter4 votes for Two
+Voter5 votes for Two
+Voter6 chooses not to vote.
+Voter7 chooses not to vote.
+Voter8 chooses not to vote.
+Voter9 chooses not to vote.
+VoterA votes for Five
+VoterB votes for Five
+Voting has ended...
+No winner yet.  Removing the candidate Five
+Beginning voting...
+Voter0 votes for One
+Voter1 votes for Two
+Voter2 votes for One
+Voter3 votes for One
+Voter4 votes for Two
+Voter5 votes for Two
+Voter6 chooses not to vote.
+Voter7 chooses not to vote.
+Voter8 chooses not to vote.
+Voter9 chooses not to vote.
+VoterA chooses not to vote.
+VoterB chooses not to vote.
+Voting has ended...
+No winner yet.  Removing the candidate One
+Beginning voting...
+Voter0 chooses not to vote.
+Voter1 votes for Two
+Voter2 chooses not to vote.
+Voter3 chooses not to vote.
+Voter4 votes for Two
+Voter5 votes for Two
+Voter6 chooses not to vote.
+Voter7 chooses not to vote.
+Voter8 chooses not to vote.
+Voter9 chooses not to vote.
+VoterA chooses not to vote.
+VoterB chooses not to vote.
+Voting has ended...
+Two WON THE ALTERNATIVE VOTE ELECTION.

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Event Driven JS</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script>
+	var x = [];
+	x[0] = "0Calculator.html";
+	x[1] = "1HideShow.html";
+	x[2] = "2Change7Styles.html";
+	x[3] = "3MoveText.html";
+	x[4] = "4AddToArray.html";
+	x[5] = "5OverOut.html";
+	x[6] = "6GrowingImage.html";
+	x[7] = "7PixelIncrease.html";
+	x[8] = "8RunningSum.html";
+	x[9] = "9Stack.html";
+
+	function set(number){
+		var frame =  document.getElementById("section");
+		frame.src = x[number];
+	}
+</script>
+</head>
+<body>
+	<header>Using JavaScript to Change the HTML</header>
+	<nav id="events">
+		<button id="0" onclick="set(0)">0) Calculator</button><br>
+		<br><button id="1" onclick="set(1)">1) Hide / Show</button><br>
+		<br><button id="2" onclick="set(2)">2) Change 7 Styles</button><br>
+		<br><button id="3" onclick="set(3)">3) Move Text</button><br>
+		<br><button id="4" onclick="set(4)">4) Add to Array</button><br>
+		<br><button id="5" onclick="set(5)">5) Over Out</button><br>
+		<br><button id="6" onclick="set(6)">6) Growing Image</button><br>
+		<br><button id="7" onclick="set(7)">7) Pixel Increase</button><br>
+		<br><button id="8" onclick="set(8)">8) Running Sum</button><br>
+		<br><button id="9" onclick="set(9)">9) Stack Changes</button>			
+	</nav>
+	<iframe id="section" src="intro.html"></iframe>
+	<footer>Brendon Hudnell</footer>
+</body>
+</html>

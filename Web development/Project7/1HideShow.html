@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	var count = 0;
+
+	function ChangeDiv(){
+		var div = document.getElementById("DivChanged");
+		var button = document.getElementById("button");
+		
+		if (count%2 == 0){
+			div.innerHTML = "";
+			button.innerHTML = "Show";
+		}
+		else{
+			div.innerHTML = "This text will appear and disappear.";
+			button.innerHTML = "Hide";
+		}
+		count++;
+	}
+</script>
+</head>
+<body>
+	<button id="button" onclick="ChangeDiv()">Hide</button>
+	<br><br><div id="DivChanged">This text will appear and disappear.</div>
+</body>
+</html>

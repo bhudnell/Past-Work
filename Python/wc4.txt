@@ -1,0 +1,5 @@
+a
+dog cat
+Cat a dog
+a a a
+dog Dog dog

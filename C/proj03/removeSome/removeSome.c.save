@@ -1,0 +1,13 @@
+/*
+ * File: removeSome.c
+ * Author: Brendon Hudnell
+ * Purpose: 
+ */
+
+#include <stdio.h>
+
+int main(){
+	char str[32];
+
+	while (scanf("%31s", str) != EOF){
+		

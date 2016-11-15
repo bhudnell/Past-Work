@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+	div {
+		text-align: center;
+		border: 2px solid red;
+		background-color: pink;
+		height: 20px;
+		width: 150px;
+	}
+</style>
+<script>
+	var count = 0;
+
+	function ChangeDiv(status){
+		count++;
+		var div = document.getElementById("changed");
+		
+		if (status === "entered")
+			div.innerHTML = "Entered " + count + " events";
+		else
+			div.innerHTML = "Exited " + count + " events";
+	}
+</script>
+</head>
+<body>
+	<div onmouseover="ChangeDiv('entered')" onmouseout="ChangeDiv('exited')">Hover over Me</div>
+	<br><div id="changed"></div>
+</body>
+</html>

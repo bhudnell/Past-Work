@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+	var sum = 0;
+	var str = "";
+	
+	function addNum(){
+		var input = document.getElementById("val");
+		var div = document.getElementById("sum");
+		var num = parseInt(input.value);
+		input.value = "";
+		
+		if (!isNaN(num)){
+			if (sum == 0)
+				str += num;
+			else
+				str += "," + num;
+			sum += num;
+		
+			div.innerHTML = "sum of [" + str + "] = " + sum;
+		}
+	}
+</script>
+</head>
+<body>
+	Enter a number: <input type="text" id="val" onchange="addNum()"><br><br>
+	<div id="sum">
+		sum of [] = 0
+	</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/*
+ * File: primePair.c
+ * Author: Brendon Hudnell
+ * Purpose: a program to find all numbers between the given two input integers
+ *  that are the product of exactly two primes.
+ */
+
+#include <stdio.h>
+
+int firstFactor(int val);
+
+int main(){
+	
